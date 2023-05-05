@@ -3,4 +3,4 @@ try to open tha code in VS code.
 in the python terminal type 'python manage.py runserver'
 you should get a ip address, click on it to open a browser.
 append 'noiseData/' to the url, all the data will be fetched.
-You can use the same url to fetch the data in the front end application. eg: "27.0.0.1:8000/noiseData/"
+You can use the same url to fetch the data in the front end application. eg: "http://127.0.0.1:8000/noiseData/"
