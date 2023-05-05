@@ -24,3 +24,9 @@ class noisedata(models.Model):
     lc_winddir = models.DecimalField(max_digits=50,decimal_places=25)
     lc_windspeed = models.DecimalField(max_digits=50,decimal_places=25)
     lc_temp = models.DecimalField(max_digits=50,decimal_places=25)
+
+class noiseLocation(models.Model):
+    description = models.CharField(max_length=200)
+    type = models.CharField(max_length=200)
+    coordinates_longitude = models.CharField(max_length=400)
+    coordinates_lattitude = models.CharField(max_length=400)

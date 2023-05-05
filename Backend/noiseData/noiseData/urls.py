@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from noiseDataRestApi.views import noiseData_list
+from noiseDataRestApi.views import noiselocations_list
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('noiseData/', noiseData_list),
+    path('noiseLocations/', noiselocations_list),
 ]
