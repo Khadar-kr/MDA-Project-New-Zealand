@@ -27,7 +27,7 @@ university_dict = {
     "KU Leuven Health Center": (50.874962, 4.699720),
     "Universiteitshal": (50.877949, 4.700100),
 }
-
+#
 # Add latitude and longitude columns to the noise_df dataframe
 noise_df['latitude'] = noise_df['description'].map(lambda x: coordinates_dict[x][0] if x in coordinates_dict else None)
 noise_df['longitude'] = noise_df['description'].map(lambda x: coordinates_dict[x][1] if x in coordinates_dict else None)
