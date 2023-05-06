@@ -1,6 +1,3 @@
-Data/Meteo Data
-Data/Noise Data/export_40/
-Data/Noise Data/export_41/
-Data/Noise Data/export_42/
+Data/*
 *.csv
 *.xlsx
