@@ -189,10 +189,14 @@ def update_location(clickData):
 
 @app.callback(
     Output("location_info", "children"),
-    [Input("map", "clickData")],
+    [
+        Input("map", "clickData"),
+        Input("month_slider", "value"),
+        Input("day_slider", "value"),
+    ],
 )
-def update_location_info(clickData):
-    return display_map_info(clickData)
+def update_location_info(clickData, month, day):
+    return display_map_info(clickData, month, day)
 
 @app.callback(
     Output("line_chart", "figure"),
@@ -219,8 +223,7 @@ def update_line_chart_based_on_location(metric, month, day, clickData):
     if clickData:
         idx = clickData["points"][0]["pointIndex"]
         location = combined_df.iloc[idx]["name"]
-        correct_location = noise_df[noise_df["name"] == location]["name"].values[0]
-        updated_scatter_chart = update_line_chart(metric, month, day, correct_location)
+        updated_scatter_chart = update_line_chart(metric, month, day, location)
         
         return updated_scatter_chart
     else:
@@ -240,8 +243,7 @@ def update_weather_chart_based_on_location(metric, month, day, clickData):
     if clickData:
         idx = clickData["points"][0]["pointIndex"]
         location = combined_df.iloc[idx]["name"]
-        correct_location = noise_df[noise_df["name"] == location]["name"].values[0]
-        weather_data = noise_df[(noise_df["Month"] == month) & (noise_df["Day"] == day) & (noise_df["name"] == correct_location)]
+        weather_data = noise_df[(noise_df["Month"] == month) & (noise_df["Day"] == day) & (noise_df["name"] == location)]
         weather_chart = px.line(weather_data, x="Hour", y=metric, title="Weather Data")
         
         return weather_chart
@@ -250,32 +252,25 @@ def update_weather_chart_based_on_location(metric, month, day, clickData):
 
 
 
-
-def display_map_info(clickData):
+def display_map_info(clickData, month, day):
     if clickData:
         idx = clickData["points"][0]["pointIndex"]
-        row = combined_df.iloc[idx]
+        location = combined_df.iloc[idx]["name"]
+        filtered_data = noise_df[(noise_df["Month"] == month) & (noise_df["Day"] == day) & (noise_df["name"] == location)].iloc[0]
+
         return html.Table(
             [
-                html.Tr([html.Th("name"), html.Td(row["name"])]),
-                html.Tr([html.Th("Lamax"), html.Td(row["lamax"])]),
-                html.Tr([html.Th("Laeq"), html.Td(row["laeq"])]),
-                html.Tr([html.Th("Lceq"), html.Td(row["lceq"])]),
-                html.Tr([html.Th("Lcpeak"), html.Td(row["lcpeak"])]),
-                html.Tr([html.Th("Humidity"), html.Td(row["LC_HUMIDITY"])]),
-                html.Tr([html.Th("Dew Point Temperature"), html.Td(row["LC_DWPTEMP"])]),
-                html.Tr([html.Th("Number of events"), html.Td(row["number_of_events"])])
+                html.Tr([html.Th("name"), html.Td(location)]),
+                html.Tr([html.Th("Lamax"), html.Td(round(filtered_data["lamax"], 2))]),
+                html.Tr([html.Th("Laeq"), html.Td(round(filtered_data["laeq"], 2))]),
+                html.Tr([html.Th("Lceq"), html.Td(round(filtered_data["lceq"], 2))]),
+                html.Tr([html.Th("Lcpeak"), html.Td(round(filtered_data["lcpeak"], 2))]),
+                html.Tr([html.Th("Humidity"), html.Td(round(filtered_data["LC_HUMIDITY"], 2))]),
+                html.Tr([html.Th("Dew Point Temperature"), html.Td(round(filtered_data["LC_DWPTEMP"], 2))]),
+                html.Tr([html.Th("Number of events"), html.Td(filtered_data["number_of_events"])])
             ]
         )
     return "Click on a point to see more information."
-
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
     app.run_server(debug=True)
