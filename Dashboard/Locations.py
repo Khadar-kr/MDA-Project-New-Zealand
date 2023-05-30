@@ -101,4 +101,5 @@ combined_df = pd.merge(google_data, noise_df, on='name', how='left')
 # Set the 'type' column in combined_df to 'Noise Meter'
 combined_df['type'] = 'Noise Meter'
 
+events_data_df = pd.read_excel('typedata.xlsx')
 
