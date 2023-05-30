@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins', 'Regular';
+    background-color: #212332;
+}
+
+.Select-value-label {
+    color: black;
+}
+
+.VirtualizedSelectOption {
+    color: black;
+}
