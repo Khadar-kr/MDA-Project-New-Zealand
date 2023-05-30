@@ -22,6 +22,7 @@ bokeh @ file:///C:/Windows/TEMP/abs_4a259bc2-ed05-4a1f-808e-ac712cc0900cddqp8sp7
 Bottleneck @ file:///C:/Windows/Temp/abs_3198ca53-903d-42fd-87b4-03e6d03a8381yfwsuve8/croots/recipe/bottleneck_1657175565403/work
 Brotli @ file:///C:/Windows/Temp/abs_63l7912z0e/croots/recipe/brotli-split_1659616056886/work
 brotlipy==0.7.0
+build==0.10.0
 certifi @ file:///C:/b/abs_85o_6fm0se/croot/certifi_1671487778835/work/certifi
 cffi @ file:///C:/b/abs_49n3v2hyhr/croot/cffi_1670423218144/work
 chardet @ file:///C:/ci/chardet_1607706937985/work
@@ -164,6 +165,7 @@ pep8==1.7.1
 pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
 pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
 Pillow==9.4.0
+pip-tools==6.13.0
 platformdirs @ file:///C:/b/abs_73cc5cz_1u/croots/recipe/platformdirs_1662711386458/work
 plotly @ file:///C:/ci/plotly_1658142442431/work
 pluggy @ file:///C:/ci/pluggy_1648024580010/work
@@ -196,6 +198,7 @@ PyNaCl @ file:///C:/Windows/Temp/abs_d5c3ajcm87/croots/recipe/pynacl_16596206674
 pyodbc @ file:///C:/Windows/Temp/abs_61e3jz3u05/croots/recipe/pyodbc_1659513801402/work
 pyOpenSSL @ file:///C:/b/abs_552w85x1jz/croot/pyopenssl_1677607703691/work
 pyparsing @ file:///C:/Users/BUILDE~1/AppData/Local/Temp/abs_7f_7lba6rl/croots/recipe/pyparsing_1661452540662/work
+pyproject_hooks==1.0.0
 PyQt5==5.15.7
 PyQt5-sip @ file:///C:/Windows/Temp/abs_d7gmd2jg8i/croots/recipe/pyqt-split_1659273064801/work/pyqt_sip
 PyQtWebEngine==5.15.4
