@@ -12,25 +12,24 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 from statsmodels.nonparametric.smoothers_lowess import lowess
-from Locations import combined_df
+from Locations import combined_df,events_data_df
 
 # Define colors for event types
 color_events = {
-    "Human voice - Shouting": "#FF43CA",
-    "Human voice - Singing": "#19E9AA",
-    "Music non-amplified": "#FF4343",
-    "Nature elements - Wind": "#FF4387",
-    "Transport road - Passenger car": "#FF7B43",
-    "Transport road - Siren": "#19B7E9",
+    "Human Voice - Shouting": "#636EFA",
+    "Human Voice - Singing": "#EF553B",
+    "Music non-amplified": "#00CC96",
+    "Natural elements - Wind": "#AB63FA",
+    "Transport road- Passenger car": "#FFA15A",
+    "Transport road - Siren": "#19D3F3",
 }
 
-event_columns = [
-    "Human voice - Shouting",
-    "Human voice - Singing",
-    "Music non-amplified",
-    "Nature elements - Wind",
-    "Transport road - Passenger car",
-    "Transport road - Siren",
+event_columns = ['Human Voice - Shouting',
+                'Human Voice - Singing',
+                'Music non-amplified',
+                'Natural elements - Wind',
+                'Transport road- Passenger car',
+                'Transport road - Siren'
 ]
 
 month_dict = {
@@ -96,7 +95,7 @@ sidebar = html.Div(
 
 
 # Get unique location names
-locations_events = combined_df["name"].unique().tolist()
+locations_events = events_data_df["name"].unique().tolist()
 locations_events.append("All locations")
 
 # Define layout for dropdown
@@ -170,9 +169,9 @@ def interpret_trend(y_values, month_dict, threshold=1.5):
 )
 def update_pie_chart(location):
     if location == "All locations":
-        event_sums = combined_df[event_columns].sum()
+        event_sums = events_data_df[event_columns].sum()
     else:
-        event_sums = combined_df[combined_df["name"] == location][event_columns].sum()
+        event_sums = events_data_df[events_data_df["name"] == location][event_columns].sum()
 
     pie_plot = go.Figure(data=[go.Pie(labels=event_sums.index, values=event_sums.values)])
     pie_plot.update_traces(marker=dict(colors=[color_events[key] for key in event_sums.index]), textfont=dict(color="white"), insidetextfont=dict(color="white"), outsidetextfont=dict(color="white"))
@@ -201,14 +200,14 @@ def update_pie_chart(location):
 )
 def update_bar_chart_and_insights(location, selected_category):
     if location == "All locations":
-        df_grouped = combined_df.melt(
+        df_grouped = events_data_df.melt(
             id_vars=["Month"],
             value_vars=event_columns,
             var_name="Event Type",
             value_name="Count",
         ).groupby(["Month", "Event Type"]).sum().reset_index()
     else:
-        df_grouped = combined_df[combined_df["name"] == location].melt(
+        df_grouped = events_data_df[events_data_df["name"] == location].melt(
             id_vars=["Month"],
             value_vars=event_columns,
             var_name="Event Type",
@@ -276,9 +275,9 @@ def update_bar_chart_and_insights(location, selected_category):
         )
 
     if location == "All locations":
-        event_sums = combined_df[event_columns].sum()
+        event_sums = events_data_df[event_columns].sum()
     else:
-        event_sums = combined_df[combined_df["name"] == location][event_columns].sum()
+        event_sums = events_data_df[events_data_df["name"] == location][event_columns].sum()
 
     total_events = event_sums.sum()
     top_events = event_sums.nlargest(3).index.tolist()
@@ -344,7 +343,7 @@ event_page = html.Div([
                     ),
                     dbc.Col(
                         [
-                            html.H3("Pie Plot", className="mb-3", style={"color": "white"}),
+                            html.H3("Total events over the year", className="mb-3", style={"color": "white"}),
                             dcc.Graph(id="pie-chart"),
                         ],
                         md=6,
@@ -399,25 +398,6 @@ map_fig.update_layout(
     paper_bgcolor='#2a2d3e',
 )
 
-# Noise metric buttons
-noise_metric_buttons = dbc.Row(
-    [
-        dbc.Label("Select noise metric", className="mb-2", style={'color': 'white'}),
-        dbc.RadioItems(
-            id="noise_metric",
-            options=[
-                {"label": "Lamax", "value": "lamax"},
-                {"label": "Laeq", "value": "laeq"},
-                {"label": "Lceq", "value": "lceq"},
-                {"label": "Lcpeak", "value": "lcpeak"},
-            ],
-            value="laeq",
-            inline=True,
-            style={'color': 'white'}
-        ),
-    ],
-)
-
 # weather metric buttons
 weather_metric_buttons = dbc.Row(
     [
@@ -426,7 +406,6 @@ weather_metric_buttons = dbc.Row(
             id="weather_metric",
             options=[
                 {"label": "Temperature", "value": "LC_TEMP"},
-                {"label": "Humidity", "value": "LC_HUMIDITY"},
                 {"label": "Rain intensity", "value": "LC_RAININ"},
             ],
             value="LC_TEMP",
@@ -527,7 +506,7 @@ def update_location_info(clickData, month, day):
 @app.callback(
     Output("line_chart", "figure"),
     [
-        Input("noise_metric", "value"),
+        
         Input("month_slider", "value"),
         Input("day_slider", "value"),
         Input("map", "clickData"),
@@ -535,10 +514,9 @@ def update_location_info(clickData, month, day):
 )
 
 
-
-
 # Use the default figure when no data is available
-def update_line_chart_based_on_location(metric, month, day, clickData):
+def update_line_chart_based_on_location(month, day, clickData):
+    metric = 'laeq'  
     if clickData:
         location = clickData["points"][0]["hovertext"]
         updated_scatter_chart = update_line_chart(metric, month, day, location)
@@ -555,7 +533,6 @@ def update_line_chart_based_on_location(metric, month, day, clickData):
         Input("map", "clickData"),
     ],
 )
-
 def update_weather_chart_based_on_location(metric, month, day, clickData):
     if clickData:
         location = clickData["points"][0]["hovertext"]
@@ -586,7 +563,7 @@ def display_map_info(clickData, month, day):
         day_name = filtered_data['day_name'].iloc[0]
         
         # Calculate the mean noise level for the month
-        mean_noise_level = combined_df[(combined_df["Month"] == month) & (combined_df["name"] == location)]["lamax"].mean()
+        mean_noise_level = combined_df[(combined_df["Month"] == month) & (combined_df["name"] == location)]["laeq"].mean()
         
         # Calculate the percentages of noise above the reference levels
         reference_lines = {
@@ -604,13 +581,10 @@ def display_map_info(clickData, month, day):
         return html.Table(
         [
         html.Tr([html.Th("Date"), html.Td(f"{day_name}, {month}/{day}")]),
-        html.Tr([html.Th("Lamax"), html.Td(round(filtered_data["lamax"].mean(), 2))]),
-        html.Tr([html.Th("Laeq"), html.Td(round(filtered_data["laeq"].mean(), 2))]),
-        html.Tr([html.Th("Lceq"), html.Td(round(filtered_data["lceq"].mean(), 2))]),
-        html.Tr([html.Th("Lcpeak"), html.Td(round(filtered_data["lcpeak"].mean(), 2))]),
-        html.Tr([html.Th("Humidity"), html.Td(round(filtered_data["LC_HUMIDITY"].mean(), 2))]),
-        html.Tr([html.Th("Dew Point Temperature"), html.Td(round(filtered_data["LC_DWPTEMP"].mean(), 2))]),
+        html.Tr([html.Th("Noise level"), html.Td(round(filtered_data["laeq"].mean(), 2))]),
         html.Tr([html.Th("Mean Noise Level (Month)"), html.Td(round(mean_noise_level, 2))]),
+        html.Tr([html.Th("Temperature"), html.Td(round(filtered_data["LC_TEMP"].mean(), 2))]),
+               
         ] + [
         html.Tr([html.Th(f"{label} noise level"), html.Td(f"{percent}% of noise for your selected day")])
         for label, percent in noise_percents.items()
@@ -729,9 +703,7 @@ dbc.Container(
                 dbc.Col(
                     [
                         
-                        html.H3(id="line_chart_title", children="Line Chart for Noise Data",style={"color": "white"}),
-                        noise_metric_buttons,
-                        
+                        html.H3(id="line_chart_title", children="Line Chart for Noise Data",style={"color": "white"}),                       
                         dcc.Graph(id="line_chart"),
                         html.H3(id="weather_chart_title", children="Line Chart for Weather Data",style={"color": "white"}),
                         weather_metric_buttons,
