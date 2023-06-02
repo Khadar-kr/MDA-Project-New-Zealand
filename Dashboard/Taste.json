@@ -1,0 +1,1323 @@
+[{
+  "url": "https://www.google.be/maps/place/Rambergpark/@50.8760591,4.6993876,18z/data=!4m2!3m1!1s0x47c161279c60a867:0x7806e727f1637c3a?hl=en",
+  "searchString": null,
+  "rank": null,
+  "searchPageUrl": null,
+  "searchPageLoadedUrl": null,
+  "isAdvertisement": false,
+  "title": "Rambergpark",
+  "description": null,
+  "price": null,
+  "categoryName": "Park",
+  "address": "Ramberg, 3000 Leuven, Belgium",
+  "neighborhood": "Ramberg",
+  "street": "Ramberg",
+  "city": "Leuven",
+  "postalCode": "3000",
+  "state": null,
+  "countryCode": "BE",
+  "website": "http://www.dijlewolven.be/",
+  "phone": null,
+  "phoneUnformatted": null,
+  "claimThisBusiness": true,
+  "location": {
+    "lat": 50.8753731,
+    "lng": 4.6991724
+  },
+  "locatedIn": null,
+  "plusCode": "VMGX+4M Leuven, Belgium",
+  "menu": null,
+  "totalScore": 4.1,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJZ6hgnCdhwUcROnxj8SfnBng",
+  "categories": [
+    "Park"
+  ],
+  "cid": "8648854293151185978",
+  "reviewsCount": 30,
+  "reviewsDistribution": {
+    "oneStar": 0,
+    "twoStar": 3,
+    "threeStar": 1,
+    "fourStar": 15,
+    "fiveStar": 11
+  },
+  "imagesCount": 38,
+  "scrapedAt": "2023-05-30T14:18:43.011Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "similarHotelsNearby": null,
+  "popularTimesLiveText": "Now: Usually not busy",
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {
+    "Su": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 26
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 0
+      }
+    ],
+    "Mo": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 0
+      }
+    ],
+    "Tu": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 0
+      }
+    ],
+    "We": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 40
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 33
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 26
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 33
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 33
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 0
+      }
+    ],
+    "Th": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 26
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 46
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 66
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 86
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 100
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 93
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 73
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 46
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 0
+      }
+    ],
+    "Fr": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 33
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 33
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 0
+      }
+    ],
+    "Sa": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 26
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 33
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 33
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 20
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 13
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 6
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 0
+      }
+    ]
+  },
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "7 AM to 9:30 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "7 AM to 9:30 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "7 AM to 9:30 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "7 AM to 9:30 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "7 AM to 9:30 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "7 AM to 9:30 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "7 AM to 9:30 PM"
+    }
+  ],
+  "peopleAlsoSearch": [
+    {
+      "category": "People also search for",
+      "title": "Mariapark",
+      "reviewsCount": 56,
+      "totalScore": 4
+    },
+    {
+      "category": "People also search for",
+      "title": "Katelijnepark",
+      "reviewsCount": 10,
+      "totalScore": 4.2
+    },
+    {
+      "category": "People also search for",
+      "title": "Klaverpark",
+      "reviewsCount": 16,
+      "totalScore": 4.2
+    },
+    {
+      "category": "People also search for",
+      "title": "Park van de Abdij van Keizersberg",
+      "reviewsCount": 75,
+      "totalScore": 4.3
+    },
+    {
+      "category": "People also search for",
+      "title": "Dijlepark",
+      "reviewsCount": 275,
+      "totalScore": 4.3
+    }
+  ],
+  "placesTags": [],
+  "reviewsTags": [],
+  "additionalInfo": {
+    "Amenities": [
+      {
+        "Good for kids": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "questionsAndAnswers": null,
+  "updatesFromCustomers": null,
+  "webResults": [],
+  "orderBy": [],
+  "imageUrls": [],
+  "reviews": []
+},
+{
+  "url": "https://www.google.be/maps/place/Taste/@50.875928,4.699698,18.5z/data=!4m2!3m1!1s0x47c161278c72537b:0xf36447ff91bb5594?hl=en",
+  "searchString": null,
+  "rank": null,
+  "searchPageUrl": null,
+  "searchPageLoadedUrl": null,
+  "isAdvertisement": false,
+  "title": "Taste",
+  "description": null,
+  "price": "$$$",
+  "categoryName": "Fine dining restaurant",
+  "address": "Naamsestraat 62, 3000 Leuven, Belgium",
+  "neighborhood": "Naamsestraat 62",
+  "street": "Naamsestraat 62",
+  "city": "Leuven",
+  "postalCode": "3000",
+  "state": null,
+  "countryCode": "BE",
+  "website": "http://www.leuventaste.be/",
+  "phone": "+32 16 84 87 32",
+  "phoneUnformatted": "+3216848732",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 50.8758366,
+    "lng": 4.7002254
+  },
+  "locatedIn": null,
+  "plusCode": "VPG2+83 Leuven, Belgium",
+  "menu": "https://www.leuventaste.be/diner.html",
+  "totalScore": 4.7,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJe1NyjCdhwUcRlFW7kf9HZPM",
+  "categories": [
+    "Fine dining restaurant"
+  ],
+  "cid": "17538222011874760084",
+  "reviewsCount": 222,
+  "reviewsDistribution": {
+    "oneStar": 2,
+    "twoStar": 2,
+    "threeStar": 6,
+    "fourStar": 35,
+    "fiveStar": 177
+  },
+  "imagesCount": 671,
+  "scrapedAt": "2023-05-30T14:18:56.870Z",
+  "reserveTableUrl": "https://www.google.com/maps/reserve/v/dine/c/rpK-_Oz9T-c?source=pa&hl=en&gei=rAV2ZJeHE76Rxc8Pr6qg8A8&sourceurl=http://www.google.be/service/MapsPlaceService/GetPlace?hl%3Den%26authuser%3D0%26q%3DTaste",
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "similarHotelsNearby": null,
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {
+    "Su": [],
+    "Mo": [],
+    "Tu": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 48
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 83
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 100
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 81
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 44
+      }
+    ],
+    "We": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 70
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 87
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 83
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 74
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 46
+      }
+    ],
+    "Th": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 61
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 85
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 94
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 79
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 51
+      }
+    ],
+    "Fr": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 75
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 85
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 75
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 79
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 40
+      }
+    ],
+    "Sa": [
+      {
+        "hour": 6,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 7,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 8,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 9,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 10,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 11,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 12,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 13,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 14,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 15,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 16,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 17,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 18,
+        "occupancyPercent": 0
+      },
+      {
+        "hour": 19,
+        "occupancyPercent": 68
+      },
+      {
+        "hour": 20,
+        "occupancyPercent": 70
+      },
+      {
+        "hour": 21,
+        "occupancyPercent": 72
+      },
+      {
+        "hour": 22,
+        "occupancyPercent": 85
+      },
+      {
+        "hour": 23,
+        "occupancyPercent": 68
+      }
+    ]
+  },
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "7 to 11:30 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "7 to 11:30 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "7 to 11:30 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "7 to 11:30 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "7 to 11:30 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "peopleAlsoSearch": [
+    {
+      "category": "People also search for",
+      "title": "EssenCiel",
+      "reviewsCount": 199,
+      "totalScore": 4.7
+    },
+    {
+      "category": "People also search for",
+      "title": "D'Artagnan",
+      "reviewsCount": 139,
+      "totalScore": 4.3
+    },
+    {
+      "category": "People also search for",
+      "title": "EED",
+      "reviewsCount": 171,
+      "totalScore": 4.8
+    },
+    {
+      "category": "People also search for",
+      "title": "L'Etoile d'Or",
+      "reviewsCount": 215,
+      "totalScore": 4.1
+    },
+    {
+      "category": "People also search for",
+      "title": "TASTE OF ASIA LEUVEN",
+      "reviewsCount": 252,
+      "totalScore": 4.2
+    }
+  ],
+  "placesTags": [],
+  "reviewsTags": [
+    {
+      "title": "wines",
+      "count": 25
+    },
+    {
+      "title": "experience",
+      "count": 23
+    },
+    {
+      "title": "chef",
+      "count": 18
+    },
+    {
+      "title": "table",
+      "count": 12
+    },
+    {
+      "title": "drinks",
+      "count": 8
+    },
+    {
+      "title": "course",
+      "count": 8
+    },
+    {
+      "title": "price",
+      "count": 8
+    },
+    {
+      "title": "host",
+      "count": 6
+    },
+    {
+      "title": "sommelier",
+      "count": 6
+    },
+    {
+      "title": "pleasure",
+      "count": 6
+    }
+  ],
+  "additionalInfo": {
+    "From the business": [
+      {
+        "Identifies as women-owned": true
+      }
+    ],
+    "Service options": [
+      {
+        "Dine-in": true
+      },
+      {
+        "Delivery": false
+      }
+    ],
+    "Accessibility": [
+      {
+        "Wheelchair accessible entrance": false
+      },
+      {
+        "Wheelchair accessible parking lot": false
+      }
+    ],
+    "Offerings": [
+      {
+        "Alcohol": true
+      },
+      {
+        "Beer": true
+      },
+      {
+        "Cocktails": true
+      },
+      {
+        "Coffee": true
+      },
+      {
+        "Halal food": true
+      },
+      {
+        "Hard liquor": true
+      },
+      {
+        "Organic dishes": true
+      },
+      {
+        "Vegetarian options": true
+      },
+      {
+        "Wine": true
+      }
+    ],
+    "Dining options": [
+      {
+        "Brunch": true
+      },
+      {
+        "Dinner": true
+      },
+      {
+        "Dessert": true
+      }
+    ],
+    "Amenities": [
+      {
+        "Dogs allowed": true
+      },
+      {
+        "Gender-neutral restroom": true
+      },
+      {
+        "Restroom": true
+      },
+      {
+        "Wi-Fi": true
+      },
+      {
+        "Free Wi-Fi": true
+      }
+    ],
+    "Atmosphere": [
+      {
+        "Cozy": true
+      }
+    ],
+    "Crowd": [
+      {
+        "Transgender safespace": true
+      }
+    ],
+    "Planning": [
+      {
+        "Reservations required": true
+      },
+      {
+        "Accepts reservations": true
+      }
+    ],
+    "Payments": [
+      {
+        "Debit cards": true
+      },
+      {
+        "NFC mobile payments": true
+      },
+      {
+        "Credit cards": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "questionsAndAnswers": null,
+  "updatesFromCustomers": {
+    "text": "Menu tot 27 april 2022.",
+    "language": "nl",
+    "postDate": "a year ago",
+    "postedBy": {
+      "name": "Bart Keppens",
+      "url": "https://www.google.com/maps/contrib/106766982104925954001?hl=en",
+      "title": "Local Guide",
+      "totalReviews": 22
+    },
+    "media": []
+  },
+  "webResults": [],
+  "orderBy": [
+    {
+      "name": "leuventaste.be",
+      "url": "https://www.leuventaste.be/reserveer.html"
+    }
+  ],
+  "imageUrls": [],
+  "reviews": []
+}]
