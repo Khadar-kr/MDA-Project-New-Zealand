@@ -1,3 +1,13 @@
 Data/*
 *.csv
 *.xlsx
+DataUpload to DB - Copy - Copy.ipynb
+DataUpload to DB - Copy.ipynb
+DataUpload to DB.ipynb
+dataupload.py
+ReadKeys.ipynb
+Rest Calls from client.ipynb
+S3connectionToReadFile.ipynb
+.ipynb_checkpoints/DataUpload to DB-checkpoint.ipynb
+.ipynb_checkpoints/ReadKeys-checkpoint.ipynb
+S3connectionToReadFile - Copy.ipynb
