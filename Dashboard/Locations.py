@@ -96,9 +96,6 @@ df_pop = pd.DataFrame(data)
 
 #Connection Parameters constants
 aws_connection_params = {'service_name': 's3',
- 'region_name': 'eu-central-1',
- 'aws_access_key_id': 'AKIAYVNJWIQZNHZADDEU',
- 'aws_secret_access_key': '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',
  'aws_bucket_name':'mdabucketkkr'}
 
 
@@ -111,8 +108,6 @@ def fetchLocationsInfo():
 # Funtion to retrieve Aggregated data per event from DB By Name od the location
 def fetchAggredatedDataperEventByName(name):
     eventDatabylocId = "https://bbefcz2vb7.execute-api.eu-central-1.amazonaws.com/PROD/eventaggbylocandmon?name='"+name+"'"
-    print(eventDatabylocId)
-    print(pd.DataFrame(requests.get(eventDatabylocId).json()))
     return pd.DataFrame(requests.get(eventDatabylocId).json())
 
 # Funtion to retrieve Aggregated data per event from DB
@@ -120,18 +115,10 @@ def fetchAggredatedDataperEvent():
     eventDatabylocId = "https://bbefcz2vb7.execute-api.eu-central-1.amazonaws.com/PROD/eventaggbylocandmon"
     return pd.DataFrame(requests.get(eventDatabylocId).json())
 
-# Funtion to retrieve S3 Bucket #AWS
-def fetchS3Bucket():
-    s3 = boto3.resource(
-    service_name=aws_connection_params.get('service_name'),
-    region_name=aws_connection_params.get('region_name'),
-    aws_access_key_id=aws_connection_params.get('aws_access_key_id'),
-    aws_secret_access_key=aws_connection_params.get('aws_secret_access_key'))
-    return s3.Bucket(aws_connection_params.get('aws_bucket_name'))
 
 # Funtion to retrieve  data from S3 Bucket #AWS
 def fetchDataFromS3File(fileName):
-    fetchS3Bucket().download_file(Key=fileName, Filename=fileName)
+    boto3.client('s3').download_file(aws_connection_params.get('aws_bucket_name'),fileName, fileName)
     noise_dataframe=pd.read_csv(fileName)
     return noise_dataframe
 
