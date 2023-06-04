@@ -12,7 +12,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 from statsmodels.nonparametric.smoothers_lowess import lowess
-from Locations import combined_df,events_data_df,predicted
+from Locations import combined_df,events_data_df, fetchAggredatedDataperEventByName,predicted
 
 # Define colors for event types
 color_events = {
@@ -267,8 +267,14 @@ home_page = dbc.Container([
                 html.Ul([
                     html.Li(f'{event}: {round(mean_night_noise_levels[event])} dB: {night_event_frequencies[event]} occurrences', style={"color": "white", "padding-left": "40px"}) 
                     for event in top_3_night_events.index
-                ], style={"color": "white", "padding-left": "20px"}),
-            ], style={"backgroundColor": "#2a2d3e","margin-bottom": "20px"},className="card p-3 shadow"),
+                ]), 
+            ],style={"backgroundColor": "#2a2d3e","color": "white", "padding-left": "20px","margin-bottom": "20px"}, className="card p-3 shadow"),
+
+        html.Div([
+                html.H4("Explanations for Noise", style={"color": "white", "padding-left": "20px"}),
+                html.P("Our research indicates that noise data in Leuven, which is primarily a student city, varies seasonally due to academic and cultural events. Lower noise levels in January and June correspond to exam periods when students are less likely to be socializing. Conversely, higher noise levels in March and October coincide with the end of academic semesters, when students have more free time. Noise levels drop in July when students leave the city for summer break, and rise in August by an increase in singing noise due to events like the Marktrock or Leuven Music Festival. We also observed increased noise around specific events like the Leuven Christmas Market in December, and during special occasions like the Leuven's Dance Festival in October and Christmas market opening in November.", style={"color": "white", "padding-left": "20px"}),
+        ], style={"backgroundColor": "#2a2d3e","margin-bottom": "20px"},className="card p-3 shadow"),
+        
 
         ], width=9),
         dbc.Col([
@@ -353,6 +359,7 @@ def update_pie_chart(location):
         # event_sums = fetchAggredatedDataperEventByName(location)[event_columns].sum()
         event_sums = events_data_df[events_data_df["name"] == location][event_columns].sum()
 
+
     pie_plot = go.Figure(data=[go.Pie(labels=event_sums.index, values=event_sums.values)])
     pie_plot.update_traces(marker=dict(colors=[color_events[key] for key in event_sums.index]), textfont=dict(color="white"), insidetextfont=dict(color="white"), outsidetextfont=dict(color="white"))
     pie_plot.update_layout(
@@ -407,6 +414,7 @@ def update_bar_chart_and_insights(location, selected_category):
             var_name="Event Type",
             value_name="Count",
         ).groupby(["Month", "Event Type"]).sum().reset_index()
+
     df_pivot = df_grouped.pivot(index="Month", columns="Event Type", values="Count").fillna(0)
 
     # Sort index
