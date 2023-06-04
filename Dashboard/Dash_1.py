@@ -356,8 +356,9 @@ def update_pie_chart(location):
     if location == "All locations":
         event_sums = events_data_df[event_columns].sum()
     else:
-        event_sums = fetchAggredatedDataperEventByName(location)[event_columns].sum()
-        # event_sums = events_data_df[events_data_df["name"] == location][event_columns].sum()
+        # event_sums = fetchAggredatedDataperEventByName(location)[event_columns].sum()
+        event_sums = events_data_df[events_data_df["name"] == location][event_columns].sum()
+
 
     pie_plot = go.Figure(data=[go.Pie(labels=event_sums.index, values=event_sums.values)])
     pie_plot.update_traces(marker=dict(colors=[color_events[key] for key in event_sums.index]), textfont=dict(color="white"), insidetextfont=dict(color="white"), outsidetextfont=dict(color="white"))
@@ -401,18 +402,19 @@ def update_bar_chart_and_insights(location, selected_category):
             value_name="Count",
         ).groupby(["Month", "Event Type"]).sum().reset_index()
     else:
-        df_grouped = fetchAggredatedDataperEventByName(location).melt(
-            id_vars=["Month"],
-            value_vars=event_columns,
-            var_name="Event Type",
-            value_name="Count",
-        ).groupby(["Month", "Event Type"]).sum().reset_index()
-        # df_grouped = events_data_df[events_data_df["name"] == location].melt(
+        # df_grouped = fetchAggredatedDataperEventByName(location).melt(
         #     id_vars=["Month"],
         #     value_vars=event_columns,
         #     var_name="Event Type",
         #     value_name="Count",
         # ).groupby(["Month", "Event Type"]).sum().reset_index()
+        df_grouped = events_data_df[events_data_df["name"] == location].melt(
+            id_vars=["Month"],
+            value_vars=event_columns,
+            var_name="Event Type",
+            value_name="Count",
+        ).groupby(["Month", "Event Type"]).sum().reset_index()
+
     df_pivot = df_grouped.pivot(index="Month", columns="Event Type", values="Count").fillna(0)
 
     # Sort index
@@ -1025,4 +1027,4 @@ def display_page(pathname):
 
 # run the app
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0', port=8050)
