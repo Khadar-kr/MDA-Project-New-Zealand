@@ -96,7 +96,10 @@ df_pop = pd.DataFrame(data)
 
 #Connection Parameters constants
 aws_connection_params = {'service_name': 's3',
- 'aws_bucket_name':'mdabucketkkr'}
+                        'region_name':'eu-central-1',
+                        'aws_access_key_id':'AKIAYVNJWIQZNHZADDEU',
+                        'aws_secret_access_key':'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',
+                        'aws_bucket_name':'mdanewzealand'}
 
 
 # Funtion to retrieve locations from DB
@@ -115,16 +118,25 @@ def fetchAggredatedDataperEvent():
     eventDatabylocId = "https://bbefcz2vb7.execute-api.eu-central-1.amazonaws.com/PROD/eventaggbylocandmon"
     return pd.DataFrame(requests.get(eventDatabylocId).json())
 
+# Funtion to fetch connection to S3 Bucket #AWS
+def fetchS3Bucket():
+    s3 = boto3.resource(
+    service_name=aws_connection_params.get('service_name'),
+    region_name=aws_connection_params.get('region_name'),
+    aws_access_key_id=aws_connection_params.get('aws_access_key_id'),
+    aws_secret_access_key=aws_connection_params.get('aws_secret_access_key'))
+    return s3.Bucket(aws_connection_params.get('aws_bucket_name'))
 
 # Funtion to retrieve  data from S3 Bucket #AWS
 def fetchDataFromS3File(fileName):
-    boto3.client('s3').download_file(aws_connection_params.get('aws_bucket_name'),fileName, fileName)
+    s3Bucket.download_file(Key=fileName, Filename=fileName)
     noise_dataframe=pd.read_csv(fileName)
     return noise_dataframe
 
 
 # def fetchallData():
 locationsData = fetchLocationsInfo()
+s3Bucket = fetchS3Bucket()
 eventsData = fetchAggredatedDataperEvent()
 noiseData=fetchDataFromS3File("noise_data_final.csv")
 predictions_data=fetchDataFromS3File("noise_predictions.csv")
