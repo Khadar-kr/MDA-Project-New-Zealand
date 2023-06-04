@@ -12,7 +12,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 from statsmodels.nonparametric.smoothers_lowess import lowess
-from Locations import combined_df,events_data_df,predicted
+from Locations import combined_df,events_data_df, fetchAggredatedDataperEventByName,predicted
 
 # Define colors for event types
 color_events = {
@@ -350,7 +350,8 @@ def update_pie_chart(location):
     if location == "All locations":
         event_sums = events_data_df[event_columns].sum()
     else:
-        event_sums = events_data_df[events_data_df["name"] == location][event_columns].sum()
+        event_sums = fetchAggredatedDataperEventByName(location)[event_columns].sum()
+        # event_sums = events_data_df[events_data_df["name"] == location][event_columns].sum()
 
     pie_plot = go.Figure(data=[go.Pie(labels=event_sums.index, values=event_sums.values)])
     pie_plot.update_traces(marker=dict(colors=[color_events[key] for key in event_sums.index]), textfont=dict(color="white"), insidetextfont=dict(color="white"), outsidetextfont=dict(color="white"))
@@ -394,13 +395,18 @@ def update_bar_chart_and_insights(location, selected_category):
             value_name="Count",
         ).groupby(["Month", "Event Type"]).sum().reset_index()
     else:
-        df_grouped = events_data_df[events_data_df["name"] == location].melt(
+        df_grouped = fetchAggredatedDataperEventByName(location).melt(
             id_vars=["Month"],
             value_vars=event_columns,
             var_name="Event Type",
             value_name="Count",
         ).groupby(["Month", "Event Type"]).sum().reset_index()
-
+        # df_grouped = events_data_df[events_data_df["name"] == location].melt(
+        #     id_vars=["Month"],
+        #     value_vars=event_columns,
+        #     var_name="Event Type",
+        #     value_name="Count",
+        # ).groupby(["Month", "Event Type"]).sum().reset_index()
     df_pivot = df_grouped.pivot(index="Month", columns="Event Type", values="Count").fillna(0)
 
     # Sort index
@@ -595,8 +601,8 @@ default_fig.update_layout(
 # Map figure
 map_fig = px.scatter_mapbox(
     combined_df,
-    lat="latitude",
-    lon="longitude",
+    lat="Lattitude",
+    lon="Longitude",
     hover_name="name",
     hover_data=["type"],
     color="type",
