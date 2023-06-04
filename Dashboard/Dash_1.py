@@ -638,7 +638,7 @@ month_bar = dcc.Slider(
     max=12,
     step=1,
     value=1,
-    marks={m: f"Month {m}" for m in range(1, 13)},
+    marks={m: f"{m}" for m in range(1, 13)},
 )
 day_bar = dcc.Slider(
     id="day_slider",
@@ -646,7 +646,8 @@ day_bar = dcc.Slider(
     max=31,
     step=1,
     value=1,
-    marks={d: f"No. {d}" for d in range(1, 32)},
+    marks={d: f"{d}" for d in range(1, 32)},
+
 
 )
 
