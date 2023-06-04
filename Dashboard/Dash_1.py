@@ -648,6 +648,7 @@ day_bar = dcc.Slider(
     value=1,
     marks={d: f"{d}" for d in range(1, 32)},
 
+
 )
 
 
