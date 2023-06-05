@@ -1,6 +1,14 @@
-Data/Meteo Data
-Data/Noise Data/export_40/
-Data/Noise Data/export_41/
-Data/Noise Data/export_42/
+Data/*
 *.csv
 *.xlsx
+DataUpload to DB - Copy - Copy.ipynb
+DataUpload to DB - Copy.ipynb
+DataUpload to DB.ipynb
+dataupload.py
+ReadKeys.ipynb
+Rest Calls from client.ipynb
+S3connectionToReadFile.ipynb
+.ipynb_checkpoints/DataUpload to DB-checkpoint.ipynb
+.ipynb_checkpoints/ReadKeys-checkpoint.ipynb
+S3connectionToReadFile - Copy.ipynb
+trails/testing.ipynb

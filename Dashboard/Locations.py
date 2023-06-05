@@ -2,12 +2,16 @@ import pandas as pd
 import plotly.express as px
 import pandas as pd
 from collections import defaultdict
+import requests
+import boto3
+import os
 
 def read_popular_times_histogram(file_name):
     df = pd.read_json(file_name)
     df = df[['popularTimesHistogram']]
     df.columns = ['popularTimesHistogram']
     return df
+
 
 His_Hairs_data = read_popular_times_histogram('His en hairs.json')
 filosofia = read_popular_times_histogram('filosifia.json')
@@ -90,40 +94,68 @@ data = [
 # Create the DataFrame
 df_pop = pd.DataFrame(data)
 
+
+#Connection Parameters constants
+aws_connection_params = {'service_name': 's3',
+                        'region_name':os.getenv("AWS_DEFAULT_REGION"),
+                        'aws_access_key_id':os.getenv("AWS_ACCESS_KEY_ID"),
+                        'aws_secret_access_key':os.getenv("AWS_SECRET_ACCESS_KEY"),
+                        'aws_bucket_name':'mdanewzealand'}
+
+
+# Funtion to retrieve locations from DB
+def fetchLocationsInfo():
+    noiseLocations = "https://oz7iw48vm5.execute-api.eu-central-1.amazonaws.com/prod/noiselocations"
+    return pd.DataFrame(requests.get(noiseLocations).json())
+
+
+# Funtion to retrieve Aggregated data per event from DB By Name od the location
+def fetchAggredatedDataperEventByName(name):
+    eventDatabylocId = "https://bbefcz2vb7.execute-api.eu-central-1.amazonaws.com/PROD/eventaggbylocandmon?name='"+name+"'"
+    return pd.DataFrame(requests.get(eventDatabylocId).json())
+
+# Funtion to retrieve Aggregated data per event from DB
+def fetchAggredatedDataperEvent():
+    eventDatabylocId = "https://bbefcz2vb7.execute-api.eu-central-1.amazonaws.com/PROD/eventaggbylocandmon"
+    return pd.DataFrame(requests.get(eventDatabylocId).json())
+
+# Funtion to fetch connection to S3 Bucket #AWS
+def fetchS3Bucket():
+    s3 = boto3.resource(
+    service_name=aws_connection_params.get('service_name'),
+    region_name=aws_connection_params.get('region_name'),
+    aws_access_key_id=aws_connection_params.get('aws_access_key_id'),
+    aws_secret_access_key=aws_connection_params.get('aws_secret_access_key'))
+    return s3.Bucket(aws_connection_params.get('aws_bucket_name'))
+
+# Funtion to retrieve  data from S3 Bucket #AWS
+def fetchDataFromS3File(fileName):
+    s3Bucket.download_file(Key=fileName, Filename=fileName)
+    noise_dataframe=pd.read_csv(fileName)
+    return noise_dataframe
+
+
+# def fetchallData():
+locationsData = fetchLocationsInfo()
+s3Bucket = fetchS3Bucket()
+eventsData = fetchAggredatedDataperEvent()
+noiseData=fetchDataFromS3File("noise_data_final.csv")
+predictions_data=fetchDataFromS3File("noise_predictions.csv")
+
+LOCATIONS_INFO = locationsData
+EVENT_DATA = eventsData
+NOISE_DATA=noiseData
+PREDICTED_DATA=predictions_data
+
 # Read noise data
-noise_df = pd.read_csv('final_df.csv')
-noise_df = noise_df.drop('Unnamed: 0', axis=1)
+noise_df = NOISE_DATA
+noise_df = noise_df.drop('id', axis=1)
 
-# Add coordinates for plaeces on the map
-coordinates_dict = {
-    "Taste": (50.87589116102767, 4.70021362494709),
-    "Calvariekapel KU Leuven": (50.874615493374556, 4.699986197958826),
-    "La Filosovia": (50.87414576280207, 4.700087497958807),
-    "Naamsestraat 81": (50.8739265247551, 4.700117796111627),
-    "Maxim": (50.877203099168476, 4.7007562826177764),
-    "Xior Studenthousing": (50.8766259680261, 4.700680909605859),
-    "Historical Leuven Town hall": (50.878761, 4.701240),
-    "His & Hears": (50.87536619162994, 4.700165140288285),
-}
-
-# Dictionary to map the new names
-new_names_dict = {
-    'MP 03: Naamsestraat 62 Taste': 'Taste',
-    'MP 05: Calvariekapel KU Leuven': 'Calvariekapel KU Leuven',
-    'MP 06: Parkstraat 2 La Filosovia': 'La Filosovia',
-    'MP 07: Naamsestraat 81': 'Naamsestraat 81',
-    'MP 01: Naamsestraat 35  Maxim': 'Maxim',
-    'MP 02: Naamsestraat 57 Xior': 'Xior Studenthousing',
-    'MP08bis - Vrijthof': 'Historical Leuven Town hall',
-    'MP 04: His & Hears': 'His & Hears'
-}
-
-# Rename the names in the combined_df DataFrame
-noise_df['description'] = noise_df['description'].map(new_names_dict)
 
 # Add latitude and longitude columns to the noise_df dataframe
-noise_df['latitude'] = noise_df['description'].map(lambda x: coordinates_dict[x][0] if x in coordinates_dict else None)
-noise_df['longitude'] = noise_df['description'].map(lambda x: coordinates_dict[x][1] if x in coordinates_dict else None)
+locations_copy = LOCATIONS_INFO.drop('name',axis=1)
+noise_df = pd.merge(noise_df,locations_copy,on='loc_id',how = 'left')
+
 # Convert 'Year', 'Month' and 'Day' columns to a datetime type
 noise_df['date'] = pd.to_datetime(noise_df[['Year', 'Month', 'Day']])
 
@@ -131,19 +163,20 @@ noise_df['date'] = pd.to_datetime(noise_df[['Year', 'Month', 'Day']])
 noise_df['day_name'] = noise_df['date'].dt.day_name()
 noise_df.drop(['date'], axis=1, inplace=True)
 
-# Function to convert a dictionary to a dataframe
-def dict_to_dataframe(data_dict, type_str):
-    df = pd.DataFrame.from_dict(data_dict, orient="index", columns=["latitude", "longitude"])
-    df["type"] = type_str
-    df.reset_index(inplace=True)
-    df.rename(columns={'index': 'name'}, inplace=True)
-    return df
+# # Function to convert a dictionary to a dataframe
+# def dict_to_dataframe(data_dict, type_str):
+#     df = pd.DataFrame.from_dict(data_dict, orient="index", columns=["latitude", "longitude"])
+#     df["type"] = type_str
+#     df.reset_index(inplace=True)
+#     df.rename(columns={'index': 'name'}, inplace=True)
+#     return df
 
 # Rename noise dataframe descritpion column to name and add type columm
-noise_df.rename(columns={'description': 'name'}, inplace=True)
+# noise_df.rename(columns={'description': 'name'}, inplace=True)
 
-events_data_df = pd.read_excel('typedata.xlsx')
-predicted = pd.read_csv('noise_predictions.csv')
+# events_data_df = pd.read_excel('typedata.xlsx')
+events_data_df  = EVENT_DATA
+predicted = PREDICTED_DATA
 
 # Merge pop_data_df and noise_df on the 'name' column
 combined_df = pd.merge(noise_df, df_pop,on='name', how='left')
